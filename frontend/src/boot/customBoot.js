@@ -4,10 +4,15 @@ import { sumBy } from 'lodash'
 
 import { reactive } from 'vue'
 
+import VueChartkick from 'vue-chartkick'
+import 'chartkick/chart.js'
+
 // "async" is optional;
 // more info on params: https://v2.quasar.dev/quasar-cli/boot-files
 export default boot(async ({ app }) => {
   // something to do
+
+  app.use(VueChartkick)
 
   app.config.globalProperties.$axios = axios
 

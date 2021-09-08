@@ -8,6 +8,10 @@ const routes = [
     ]
   },
   {
+    path: '/dashboard',
+    component: () => import('pages/Dashboard.vue')
+  },
+  {
     path: '/todoApp',
     component: () => import('pages/Todo.vue')
   },

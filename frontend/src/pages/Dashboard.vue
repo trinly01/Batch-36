@@ -1,5 +1,6 @@
 <template>
   <div>
+    <q-btn icon="print" @click="print"/>
     <pie-chart :donut="true" :data="dd"></pie-chart>
     <bar-chart :data="dd"></bar-chart>
 
@@ -26,6 +27,23 @@ export default {
   data () {
     return {
       dd: []
+    }
+  },
+  methods: {
+    print () {
+      const dd = {
+        content: [
+          {
+            table: {
+              body: [
+                ['category', 'Count'],
+                ...this.dd
+              ]
+            }
+          }
+        ]
+      }
+      this.$pdfMake.createPdf(dd).print()
     }
   }
 }

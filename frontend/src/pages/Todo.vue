@@ -34,7 +34,7 @@
         <div class="col">
           {{ itemsLeft }} items left
         </div>
-        
+
         <div class="q-gutter-xs">
           <q-btn @click="filter = 'All'" size="sm" :outline="filter === 'All'" :flat="filter !== 'All'" label="All" />
           <q-btn @click="filter = 'Active'" size="sm" :outline="filter === 'Active'" :flat="filter !== 'Active'" label="Active" />
@@ -75,7 +75,7 @@ export default {
           console.log('all')
           return this.todos
       }
-    },
+    }
   },
   methods: {
     addTask () {
@@ -95,7 +95,7 @@ export default {
     },
     toggleStatus (todo) {
       // your activity here
-      
+
       // Tips!
       // receive a parameter
       // use the Not (!) symbol

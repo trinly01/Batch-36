@@ -47,6 +47,7 @@
 
 <script>
 import EssentialLink from 'components/EssentialLink.vue'
+import { defineComponent, ref } from 'vue'
 
 const linksList = [
   {
@@ -91,9 +92,7 @@ const linksList = [
     icon: 'favorite',
     link: 'https://awesome.quasar.dev'
   }
-];
-
-import { defineComponent, ref } from 'vue'
+]
 
 export default defineComponent({
   name: 'MainLayout',

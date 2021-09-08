@@ -1,5 +1,6 @@
 import { boot } from 'quasar/wrappers'
 import axios from 'axios'
+import { sumBy } from 'lodash'
 
 import { reactive } from 'vue'
 
@@ -15,7 +16,7 @@ export default boot(async ({ app }) => {
   })
 
   // app.config.globalProperties.$cart = ref([])
-  // app.config.globalProperties.$bool = ref(false)
+  app.config.globalProperties.$sumBy = sumBy
   app.config.globalProperties.$formatCurrency = (number) => new Intl.NumberFormat('tl-PH', { style: 'currency', currency: 'PHP' }).format(number)
 
   app.config.globalProperties.$global = reactive({

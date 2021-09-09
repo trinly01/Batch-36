@@ -1,9 +1,10 @@
-
+const search = require('feathers-nedb-fuzzy-search')
 
 module.exports = {
   before: {
     all: [],
     find: [
+      search(),
       function (context) {
         if (context.params?.query?.price) {
           for (const key in context.params?.query?.price) {

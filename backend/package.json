@@ -46,6 +46,8 @@
     "compression": "^1.7.4",
     "cors": "^2.8.5",
     "feathers-nedb": "^5.1.0",
+    "feathers-nedb-fuzzy-search": "^1.5.0",
+    "feathers-nedb-puzzy-search": "^1.0.3",
     "helmet": "^4.6.0",
     "nedb": "^1.8.0",
     "serve-favicon": "^2.5.0",

@@ -7,6 +7,8 @@ import { reactive } from 'vue'
 import VueChartkick from 'vue-chartkick'
 import 'chartkick/chart.js'
 
+import wings from 'wings4'
+
 import pdfMake from 'pdfmake/build/pdfmake'
 import pdfFonts from 'pdfmake/build/vfs_fonts'
 pdfMake.vfs = pdfFonts.pdfMake.vfs
@@ -17,6 +19,8 @@ export default boot(async ({ app }) => {
   // something to do
 
   app.use(VueChartkick)
+
+  app.config.globalProperties.$dbCon = wings('http://localhost:3030')
 
   app.config.globalProperties.$pdfMake = pdfMake
 

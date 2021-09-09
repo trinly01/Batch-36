@@ -2,11 +2,11 @@
   <div class="q-pa-md">
     <div class="row">
       <div class="col">
-        <q-img
+        <!-- <q-img
           :src="item.image"
           style="max-width: 400px; height: 200px;"
           :fit="'contain'"
-        />
+        /> -->
       </div>
       <div>
         <q-card v-ripple class="my-card" style="width: 250px; cursor: pointer;">
@@ -69,9 +69,17 @@ export default {
   },
   methods: {
     async fetchItem () {
-      const result = await this.$shopAPI.get('products/' + this.$route.params.id)
-      console.log('products', result)
-      this.item = result.data
+      // const result = await this.$shopAPI.get('products/' + this.$route.params.id)
+      // console.log('products', result)
+      // this.item = result.data
+      // const item = await this.$dbCon.service('items').find({
+      //   query: {
+      //     _id: this.$route.params.id
+      //   }
+      // })
+      const item = await this.$dbCon.service('items').get(this.$route.params.id)
+      console.log('item', item)
+      this.item = item
     }
   }
 }

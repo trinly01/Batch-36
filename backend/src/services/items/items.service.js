@@ -6,7 +6,8 @@ const hooks = require('./items.hooks');
 module.exports = function (app) {
   const options = {
     Model: createModel(app),
-    paginate: app.get('paginate')
+    paginate: app.get('paginate'),
+    multi: ['patch', 'update']
   };
 
   // Initialize our service with any options it requires

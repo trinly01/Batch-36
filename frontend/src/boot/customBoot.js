@@ -21,6 +21,15 @@ export default boot(async ({ app }) => {
   app.use(VueChartkick)
 
   app.config.globalProperties.$dbCon = wings('http://localhost:3030')
+  app.config.globalProperties.$dbCon.authenticate()
+
+  app.config.globalProperties.$dbCon.on('login', ({ user }) => {
+    app.config.globalProperties.$global.user = user
+  })
+
+  app.config.globalProperties.$dbCon.on('logout', ({ user }) => {
+    app.config.globalProperties.$global.user = null
+  })
 
   app.config.globalProperties.$pdfMake = pdfMake
 

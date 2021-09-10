@@ -18,10 +18,20 @@ export default {
     // console.log('products', result)
     // this.items = result.data
 
-    this.itemsService = this.$dbCon.wingsService('items').init()
+    this.itemsService = this.$dbCon.wingsService('products').init()
 
     this.itemsService.on('dataChange', items => {
       this.items = items
+    })
+
+    this.$dbCon.on('login', () => {
+      console.log('login ulit')
+      this.itemsService.reset()
+      this.itemsService.init()
+    })
+
+    this.$dbCon.on('logout', () => {
+      this.items = []
     })
   },
   data: () => ({
